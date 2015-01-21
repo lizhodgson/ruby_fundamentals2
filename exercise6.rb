@@ -26,8 +26,22 @@ class GroceryList
 		else
 			puts "Don't buy #{item}"
 		end
+
+	end
+	
+	def find_2nd
+	puts @list[1] 	
 	end
 
+	def sort
+		puts @list.sort
+	end
+	
+	def delete
+	puts "what do you want to delete?"
+	item = gets.chomp
+	@list.delete_if { |i| i == item }	
+	end
 end
 
 list = GroceryList.new ["rice", "anchovies", "oranges", "apples", "figs"]
@@ -40,5 +54,6 @@ list.add "ground round"
 list.print
 list.count
 list.search
-
-
+list.find_2nd
+list.delete
+list.print
