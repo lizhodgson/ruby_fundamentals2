@@ -18,10 +18,15 @@ class GroceryList
 			
 	end
 
-#Check to see if your list includes "bananas".
-#If it does, output "You need to pick up bananas".
-#Otherwise, output "You don't need to pick up bananas today".
-
+	def search
+		puts "What are  you looking for?"
+		item = gets.strip
+		if @list.find { |i| i == item }
+			puts "Let's get #{item}"
+		else
+			puts "Don't buy #{item}"
+		end
+	end
 
 end
 
@@ -34,5 +39,6 @@ list.add "ground round"
 
 list.print
 list.count
+list.search
 
 
